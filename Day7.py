@@ -27,14 +27,14 @@ timer = 0 # seconds
 # 4. if the user input is no, break the program
 # 5. if the user input is yes continue the program as it is
 
-# desc_system = True
-# while desc_system :
-#     num1 = int(input("Enter first number : "))
-#     num2 = int(input("Enter second number : "))
-#     print(num1+num2)
-#     desc = input("Do you want to continue? : ")
-#     if desc.strip().lower() == "no":
-#         desc_system = False
+desc_system = True
+while desc_system :
+    num1 = int(input("Enter first number : "))
+    num2 = int(input("Enter second number : "))
+    print(num1+num2)
+    desc = input("Do you want to continue? : ")
+    if desc.strip().lower() == "no":
+        desc_system = False
 # input --> "  no   " == "no"
 # "__no___" == "no" --> "no"
 # "NO".lower == "no" --> "no"
@@ -44,11 +44,16 @@ for i in range(5):
     print(i)
 
 # Task door open timer program with for loop
+print("Door opened!")
+for timer in range(1,6):
+    print(f'Timer in seconds : {timer} s')
+print("Door is closed")
 
-# range(0,5) --> [0,1,2,3,4]
+
+# range(5) --> range(0,5) --> [0,1,2,3,4]
 # i = 0
 # i = 1
 # i = 2
 # i = 3
 # i = 4
-#       a,b  --> a : start, b-1 : end
+# a,b  --> a : start, b-1 : end
