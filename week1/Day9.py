@@ -5,7 +5,7 @@
 # Asks the user how many numbers they want to enter.
 #
 # Uses a loop to take those numbers as input and store them in a list.
-#
+
 # For each number:
 #
 # Use if–else to check whether the number is positive, negative, or zero.
