@@ -4,12 +4,14 @@
 class car:
     # Attributes
     Wheels = 4
+    headlight_status = False
 
     # Constructor
-    def __init__(self,color,headlight,speed,spoiler):
+    def __init__(self,color,headlight,speed,spoiler,fuel):
         self.color = color
         self.headlight = headlight
         self.speed = speed
+        self.fuel = fuel
         self.spoiler = spoiler
 
     # Methods
@@ -25,8 +27,25 @@ class car:
         curr_speed = curr_speed+speed
         self.speed = f'{curr_speed} {arr[1]}'
 
+    def drive(self,distance):
+        if int(self.fuel.split(' ')[0]) * 10 >= distance:
+            fuel_required = distance/10
+            new_fuel = int(self.fuel.split(' ')[0]) - fuel_required
+            self.fuel = f'{new_fuel} L'
+            print(self.fuel)
+        else:
+            print("Not enough fuel")
+
+    def toggle_headlight(self):
+        if self.headlight_status:
+            self.headlight_status = False
+            print('Headlight is OFF')
+        else:
+            self.headlight_status = True
+            print('Headlight is ON')
+
 # creating an object of the class.
-myCar = car('red','square','60 KM/H',True)
+myCar = car('red','square','60 KM/H',True,'50 L')
 
 # Accessing attribute of an object
 # print(myCar.color)
@@ -63,7 +82,7 @@ drive(100)
 Fuel after: 40 L
 
 '''
-
+myCar.drive(100)
 '''
 Create a method called toggle_headlight() that:
 Turns the headlight ON if it is OFF
@@ -78,7 +97,8 @@ toggle_headlight()
 Headlight is OFF
 
 '''
-
+myCar.toggle_headlight()
+myCar.toggle_headlight()
 '''
 Create a separate class called Driver with the following:
 Attributes:
