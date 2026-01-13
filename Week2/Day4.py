@@ -38,19 +38,19 @@ print(is_balanced("(()"))      # False
 print(is_balanced("())("))     # False
 '''
 
-def is_balanced(paranthesis):
-    count = 0
-    for char in paranthesis:
-        if char == '(':
-            count+=1
-        elif char == ')':
-            count-=1
-        if count < 0:
-            return False
-    return count == 0
-print(is_balanced("(()())"))   # True
-print(is_balanced("(()"))      # False
-print(is_balanced("())("))     # False
+# def is_balanced(paranthesis):
+#     count = 0
+#     for char in paranthesis:
+#         if char == '(':
+#             count+=1
+#         elif char == ')':
+#             count-=1
+#         if count < 0:
+#             return False
+#     return count == 0
+# print(is_balanced("(()())"))   # True
+# print(is_balanced("(()"))      # False
+# print(is_balanced("())("))     # False
 
 '''
 Write a function validate_password(password) that:
@@ -59,16 +59,22 @@ Must contain at least one digit
 Must contain at least one uppercase letter
 Return True or False
 '''
-
+def password_checker(password):
+    pass
 
 '''
 Write a function common_elements(list1, list2) that:
 Returns a list of common elements (no duplicates)
 Input: [1,2,3,4], [3,4,5,6]
 Output: [3,4]
-
 '''
-
+# def common_elements(list1, list2):
+#     common = []
+#     for num in list1:
+#         if num in list2:
+#             common.append(num)
+#     return common
+# print(common_elements([1,2,3,4], [3,4,5,6]))
 '''
 Write a function rotate_list(lst, k) that:
 Rotates list right by k positions
@@ -76,4 +82,12 @@ Example :
     Input: [1,2,3,4,5], k=2
     Output: [4,5,1,2,3]
 '''
+# def rotate_list(lst, k):
+#     for _ in range(k):
+#         last = lst.pop()
+#         lst.insert(0,last)
+#     return lst
+# print(rotate_list([1,2,3,4,5], k=2))
+
+
 
