@@ -32,6 +32,7 @@ class BankAccount:
     def __init__(self, name, balance):
         self.__name = name          # private
         self.__balance = balance    # private
+        self.__transaction = 0
 
     def get_name(self):
         return self.__name
@@ -42,11 +43,23 @@ class BankAccount:
     def deposit(self, amount):
         if amount > 0:
             self.__balance += amount
+            self.__transaction+=1
 
     def withdraw(self, amount):
-        if amount <= self.__balance:
+        if amount <= self.__balance and amount > 0:
             self.__balance -= amount
+            self.__transaction+=1
+        else:
+            print('Invalid amount')
 
+    def set_name(self,name):
+        if type(name) == str and len(name) > 2:
+            self.__name = name
+        else:
+            print("Invalid name")
+
+    def get_transaction(self):
+        return self.__transaction
 
 '''
 Question 1: Add Validation (Setter Method)
@@ -59,7 +72,9 @@ Length is more than 2 characters
 Otherwise print "Invalid name"
 Test the method using an object.
 '''
-
+acc = BankAccount("raunak",2000)
+acc.set_name('thapa')
+print(acc.get_name())
 '''
 Modify the withdraw() method so that:
 
@@ -74,21 +89,15 @@ Otherwise deduct the amount normally.
 
 '''
 Make the balance read-only:
-
 Remove any way to directly change balance from outside the class.
-
 Only deposit() and withdraw() should change the balance.
-
 Demonstrate that trying to modify balance directly fails.
-
 Explain why this is encapsulation.
 '''
 
 '''
 Add a private variable __transactions that:
-
 Starts from 0
-
 Increases by 1 every time:
 
 deposit is successful
@@ -97,7 +106,11 @@ withdraw is successful
 
 Create a getter method get_transactions() to display the count.
 '''
-
+print(acc.get_transaction())
+acc.deposit(1000)
+print(acc.get_transaction())
+acc.withdraw(1000)
+print(acc.get_transaction())
 '''
 Create a new class called StudentAccount that demonstrates encapsulation.
 
